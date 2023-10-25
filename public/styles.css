@@ -1,0 +1,134 @@
+body{
+  background-color: #ADC4CE;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+    /* background-image: url(/public/admin/loch-1-print.jpg);
+    backdrop-filter: blur(5px); */
+    /* background-repeat: no-repeat; */
+    background-size: auto;
+    height: 100vh;
+    color: #F1F0E8;
+}
+
+.adminLink{
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    
+}
+
+h1{
+    display: flex;   
+    justify-content: center;
+}
+
+
+
+.d-block{
+   
+    margin: 10px;
+    width: 100%;
+    
+}
+
+.home{
+    padding-top: 5%;
+}
+
+.posterContainer{
+    color: rgb(53, 50, 50);
+    max-width: 100%; /* Ensure the container is as wide as the viewport */
+    max-height: 100%;
+    padding: 20px; /* Add some padding to your content */
+    box-sizing: border-box;
+    text-align: center; /* Center the content horizontally */
+  }
+#poster-container{
+    color: rgb(53, 50, 50);
+    padding: 13%;
+  }
+.content{
+   padding-top: 15%;
+    display: flex;   
+    justify-content: center;
+}
+
+
+
+.boardColumn{
+    max-width: 20%; /* Ensure the container is as wide as the viewport */
+    max-height: 100%;
+    margin-bottom: 15px;
+}
+
+.boardRow{
+
+    height: 80%;
+}
+ 
+  
+  .boardImage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 1px 1px #575757;
+  }
+  
+  
+
+  .form-signin {
+    max-width: 330px;
+    padding: 1rem;
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
+
+  .rounded-start{
+    max-height: 100px;
+    max-width: 100%;
+    object-fit: cover
+}
+
+.adminColumn{
+    margin-bottom: 15px;
+}
+
+.adminBtn{
+    width: 90%;
+}
+.adminContainerr{
+    padding-top: 3%;
+}
+
+.adminContainer h1{
+    display: flex;   
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card{
+    box-shadow: 1px 1px 1px 1px #575757;
+}
+
+.logout{
+    position: absolute;
+    top:20px;
+   }
