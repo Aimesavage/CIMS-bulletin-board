@@ -32,8 +32,10 @@ bcrypt.hash(secret, saltRounds, (err, hash) => {
   }
 });
 
+const sessionKey = process.env.SESSION_KEY
+
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({ secret: process.env.SESSION_KEY, resave: false, saveUninitialized: true }));
+app.use(session({ secret: sessionKey.toString , resave: false, saveUninitialized: true }));
 
 
 
@@ -50,7 +52,7 @@ const { log } = require('console');
 // Remote MongoDB
 const uri = process.env.MONGODB_URI;
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri.toString, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
