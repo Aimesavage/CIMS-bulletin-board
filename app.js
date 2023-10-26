@@ -52,7 +52,7 @@ const { log } = require('console');
 // Remote MongoDB
 const uri = process.env.MONGODB_URI;
 
-mongoose.connect(uri.toString, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
