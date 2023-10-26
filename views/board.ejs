@@ -49,13 +49,13 @@ socket.on('newPoster', (data) => {
   
   const newImage = document.createElement('img');
   newImage.src = `/public/images/${data}`; 
-// Assuming 'posterName' is a property in your data
+
   newImage.alt = data.posterName;
   newImage.classList.add('img-fluid', 'boardImage');
   
   newPoster.appendChild(newImage);
   
-  // Append the new poster to the board
+
   const board = document.querySelector('.boardRow');
   board.prepend(newPoster); // prepend to add the poster at the beginning
   location.reload()
@@ -68,7 +68,7 @@ socket.on('posterDeleted', (data) => {
   
   posters.forEach(poster => {
     console.log(poster.firstChild.nextSibling.alt)
-    if (poster.firstChild.nextSibling.alt === data) { // Assuming 'posterName' is a property in your data
+    if (poster.firstChild.nextSibling.alt === data) {  
       // Remove the poster from the board
       poster.remove();
     }

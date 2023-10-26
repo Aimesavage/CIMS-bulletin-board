@@ -1,28 +1,31 @@
 <%- include("partials/header.ejs") %>
 <body >
-     <div class="container" id="poster-container">
-            <h1>Upload Images</h1>
-            
-              
-    
-            <form action="/upload" method="POST" enctype="multipart/form-data">
-               
-
-                <div class="mb-3">
-                    <label class="form-label">Choose a file</label>
-                    <input type="file" class="form-control" name="images" multiple>
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label">Pick the date of the event</label>
-                        <input type="date" class="form-control" name="date" placeholder="">
-                  </div>
-                  <div>
-                    <button type="submit" class="btn btn-primary">Upload image</button>
-                </div>
-            </form>
+  <main>
+    <div class="container" id="poster-container">
+      <h1>Upload Images</h1>
+      
         
+
+      <form action="/upload" method="POST" enctype="multipart/form-data">
          
-        </div>
+
+          <div class="mb-3">
+              <label class="form-label">Choose a file</label>
+              <input type="file" class="form-control" name="images" multiple>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Pick the date of the event</label>
+                  <input type="date" class="form-control" name="date" placeholder="">
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary">Upload image</button>
+          </div>
+      </form>
+  
+   
+  </div>
+  </main>
+    
     
 
         <%- include("partials/footer.ejs") %>

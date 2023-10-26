@@ -25,10 +25,10 @@ let correctPasswordHash;
 
 bcrypt.hash(secret, saltRounds, (err, hash) => {
   if (err) {
-    // Handle error
+   
   } else {
      correctPasswordHash = hash;
-    // Store correctPasswordHash securely, not in the code
+
   }
 });
 
@@ -42,16 +42,16 @@ app.use(session({ secret: 'my-secret-key' , resave: false, saveUninitialized: tr
 
 const { log } = require('console');
 // Local MongoDB
-// mongoose.connect('mongodb://127.0.0.1:27017/posterDB');
+mongoose.connect('mongodb://127.0.0.1:27017/posterDB');
 
 
 
-// Remote MongoDB
-const uri = process.env.MONGODB_URI;
+// // Remote MongoDB
+// const uri = process.env.MONGODB_URI;
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB Connected...'))
-  .catch(err => console.log(err));
+// mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => console.log('MongoDB Connected...'))
+//   .catch(err => console.log(err));
 
 
 const posterSchema = {
@@ -70,7 +70,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')))
 
 
 
-// create a function that uploads user image to the a directory on the server
+
 function posterUpload() {
 
     const storage = multer.diskStorage({
@@ -87,7 +87,6 @@ function posterUpload() {
     return upload 
 }
 
-// create a function that take the posters from the directory
 
 
 
@@ -112,7 +111,7 @@ app.get('/upload', (req, res)=>{
     })
     
 app.get("/success")
-// Modify the route for uploading posters
+
 app.post('/upload', posterUpload().single('images'), (req, res) => {
     if (!req.file || req.file.length === 0) {
         return res.status(400).send('No files uploaded.');
