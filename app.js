@@ -35,7 +35,7 @@ bcrypt.hash(secret, saltRounds, (err, hash) => {
 const sessionKey = process.env.SESSION_KEY
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({ secret: sessionKey.toString , resave: false, saveUninitialized: true }));
+app.use(session({ secret: sessionKey , resave: false, saveUninitialized: true }));
 
 
 
