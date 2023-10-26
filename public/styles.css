@@ -1,21 +1,21 @@
 body{
-  background-color: #ADC4CE;
+  color: white;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
-    /* overflow-y: hidden; */
-    /* background-image: url(/public/admin/loch-1-print.jpg);
-    backdrop-filter: blur(5px); */
-    /* background-repeat: no-repeat; */
+   
+    background-image: url(/public/admin/loch-1-print.jpg);
+    /* backdrop-filter: blur(5px); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: auto;
-    height: 100vh;
-    color: #F1F0E8;
+    min-height: 100vh;
+    
 }
 
 .adminLink{
     position: absolute;
-    bottom: 2px;
+    bottom: 43px;
     right: 10px;
     
 }
@@ -132,3 +132,12 @@ h1{
     position: absolute;
     top:20px;
    }
+
+   footer {
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+

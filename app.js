@@ -33,7 +33,7 @@ bcrypt.hash(secret, saltRounds, (err, hash) => {
 });
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({ secret: "your-secret-key", resave: false, saveUninitialized: true }));
+app.use(session({ secret: process.env.SESSION_KEY, resave: false, saveUninitialized: true }));
 
 
 
@@ -112,6 +112,7 @@ app.get('/upload', (req, res)=>{
         res.render("upload")
     })
     
+app.get("/success")
 // Modify the route for uploading posters
 app.post('/upload', posterUpload().single('images'), (req, res) => {
     if (!req.file || req.file.length === 0) {
@@ -130,7 +131,7 @@ app.post('/upload', posterUpload().single('images'), (req, res) => {
         .then(() => {
             // Emit a Socket.io event when a new poster is uploaded
              io.emit('newPoster', posterName);
-            return res.redirect('/upload');
+            return res.render('success-upload');
         })
         .catch((err) => {
             console.error('Error saving poster:', err);
