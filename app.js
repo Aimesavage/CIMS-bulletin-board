@@ -46,9 +46,6 @@ const { log } = require('console');
 
 
 
-
-
-
 // Remote MongoDB
 const uri = process.env.MONGODB_URI;
 
