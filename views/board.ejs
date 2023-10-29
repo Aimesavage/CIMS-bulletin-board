@@ -52,7 +52,7 @@
 
   <footer class="footer mt-auto bg-dark bg-opacity-75">
     <div class="container">
-      <span class="text-white text-light">Designed by CIMS students ©2023</span>
+      <span class="text-white text-light">© <%=  new Date().getFullYear() %> Designed by CIMS students</span> 
     </div>
   </footer>
  
@@ -94,6 +94,7 @@ socket.on('posterDeleted', (data) => {
     if (poster.firstChild.nextSibling.alt === data) {  
       // Remove the poster from the board
       poster.remove();
+      location.reload()
     }
   });
 });
