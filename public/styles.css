@@ -14,7 +14,11 @@ body{
     
 }
 .adminBtn{
-  width: 90%;
+  min-width: 100%;
+}
+.adminBtnDiv{
+  margin: 40px 0px;
+  padding: 20px;
 }
 .adminColumn{
   margin-bottom: 15px;
@@ -29,6 +33,8 @@ body{
   display: flex;   
   justify-content: center;
   margin-bottom: 20px;
+  margin-top: 30px;
+  padding-top: 20px;
 }
 
 .adminLink{
@@ -65,7 +71,10 @@ body{
   box-shadow: 1px 1px 1px 1px #575757;
 }
 
-
+.cardCol{
+margin: 10px 0;
+padding: 0 5px;
+}
 
 .content{
   padding-top: 15%;
@@ -119,6 +128,7 @@ width: 70%;
 .logout{
   position: absolute;
   top:20px;
+  right: 5px;
  }
 
 
@@ -130,15 +140,12 @@ width: 70%;
     box-sizing: border-box;
     text-align: center; 
   }
-#poster-container{
-  
-   
-  }
+
 
 
 
   .rounded-start{
     max-height: 100px;
     max-width: 100%;
-    object-fit: cover
+    object-fit: cover;
 }
