@@ -40,16 +40,16 @@ app.use(session({ secret: 'my-secret-key' , resave: false, saveUninitialized: tr
 
 
 // Local MongoDB
-// mongoose.connect('mongodb://127.0.0.1:27017/posterDB');
+mongoose.connect('mongodb://127.0.0.1:27017/posterDB');
 
 
 
 // // Remote MongoDB
-const uri = process.env.MONGODB_URI;
+// const uri = process.env.MONGODB_URI;
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB Connected...'))
-  .catch(err => console.log(err));
+// mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => console.log('MongoDB Connected...'))
+//   .catch(err => console.log(err));
 
 
 const posterSchema = {

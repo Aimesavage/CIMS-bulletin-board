@@ -10,7 +10,7 @@
 <body ">
  
   <main>
-      <div class="container-fluid posterContainer">
+      <div class="container-fluid posterContainer d-none d-md-block">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <% for (let i = posterArray.length - 1; i >= 0; i -= 3) { %>
@@ -18,7 +18,7 @@
                 <div class="row boardRow">
                   <% for (let j = i; j >= Math.max(i - 2, 0); j--) { %>
                     <% const poster = posterArray[j] %>
-                    <div class="boardColumn col-lg-4">
+                    <div class="boardColumn col-12 col-sm-6 col-md-4">
                       <img src="/public/images/<%= poster.name %>" alt="<%= poster.name %>" class="img-fluid boardImage">
                     </div>
                   <% } %>
@@ -37,14 +37,19 @@
         </div>
       </div>
 
-  
 
-
-
-
-
-  
+      <div class="row boardRow d-md-none ">
+        <% for( let i = posterArray.length - 1 ; i >= 0; i-- ) { %>
+            <% const poster = posterArray[i] %>
+            <div class="boardColumn col-md-12 col-lg-4">
+                <img src="/public/images/<%= poster.name %>" alt="<%= poster.name %>" class="img-fluid boardImage">
+            </div>
+        <% } %>
+    </div>
   </main>
+
+
+
   <footer class="footer mt-auto bg-dark bg-opacity-75">
     <div class="container">
       <span class="text-white text-light">Designed by CIMS students ©2023</span>

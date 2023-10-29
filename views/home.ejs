@@ -1,22 +1,25 @@
 <%- include("partials/header.ejs") %>
-        <body>
-              <main>
-                <div class="container home">
-                        <h1>Welcome to the CIMS Digital Bulletin Board</h1>
-                
-                        
-                <div class="content">
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                        <a href="/upload" ><button class="btn d-block btn-primary" type="button">Upload a new poster</button></a>
-                        <a href="/board"><button class="btn d-block btn-primary" type="button"> Go to board</button></a>
-                
-                        </div>
-                        <div class="adminLink">
-                                <a href="/admin">Admin</a>
-                        </div>
-                        
-                </div>
-              </main>  
+<body>
+        <main class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+          <div class="home">
+            <div class="row">
+              <div class="col">
+                <h1>Welcome to the CIMS Digital Bulletin Board</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <a href="/upload"><button class="btn d-block btn-primary" type="button">Upload a new poster</button></a>
+                <a href="/board"><button class="btn d-block btn-primary" type="button"> Go to board</button></a>
+              </div>
+            </div>
+            <div class="adminLink">
+              <a href="/admin">Admin</a>
+            </div>
+          </div>
+        </main>
+      </body>
+      
                
 
                 
