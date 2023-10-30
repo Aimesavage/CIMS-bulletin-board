@@ -44,7 +44,7 @@ app.use(session({ secret: 'my-secret-key' , resave: false, saveUninitialized: tr
 
 
 
-// // Remote MongoDB
+// // // Remote MongoDB
 const uri = process.env.MONGODB_URI;
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -110,12 +110,14 @@ app.get('/upload', (req, res)=>{
     
 app.get("/success")
 
-app.post('/upload', posterUpload().single('images'), (req, res) => {
-    if (!req.file || req.file.length === 0) {
-        return res.status(400).send('No files uploaded.');
-    }
+app.post('/upload', posterUpload().array('images', 1), (req, res, next) => {
+  if (!req.files || req.files.length === 0 ) {
+      return res.status(400).send('No files uploaded.');
+  } else if( req.files.length > 1){
+    return res.status(400).send('Please pick one poster.')
+  }
     
-    const posterName =  req.file.filename;
+    const posterName =  req.files[0].filename;
     const posterDate = req.body.date;
 
     const poster = new Poster({

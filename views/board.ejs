@@ -14,7 +14,7 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <% for (let i = posterArray.length - 1; i >= 0; i -= 3) { %>
-              <div class="carousel-item <%= i === posterArray.length - 1 ? 'active' : '' %>" data-bs-interval="50000">
+              <div class="carousel-item <%= i === posterArray.length - 1 ? 'active' : '' %>" data-bs-interval="3000">
                 <div class="row boardRow">
                   <% for (let j = i; j >= Math.max(i - 2, 0); j--) { %>
                     <% const poster = posterArray[j] %>
