@@ -1,0 +1,63 @@
+<%- include("partials/header.ejs") %>
+<body>
+        <main class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+          <div class="container adminContainer">
+            <div class="row">
+                <div class="col">
+                   
+                </div>
+            </div>
+            
+            <div class="logout">
+                <a href="/logout"><button class="btn btn-link">Logout</button></a>
+            </div>
+            <form action="/user" method="post">
+                <div class="row">
+                    
+    
+    
+                    <% for( let i = posterArray.length - 1 ; i >= 0; i-- ) { %>
+                        <% const poster = posterArray[i] %>
+                        <div class=" col-3 cardCol">
+                           
+                            <div class="admin_card" >
+                                
+                                <input class="form-check-input" type="checkbox" value="<%= poster.name %>" name="check" aria-label="...">
+                                
+                                <img src="/public/images/<%= poster.name %>" alt="<%= poster.name %>" class="img-fluid rounded-start" >
+                        
+                                
+                              </div>
+                        </div>
+                    <% } %>
+                        <div class="col-12 userDiv">
+                            <button class="btn  btn-primary" type="submit">Delete</button>
+                        </div>
+                                    
+                                
+                </div>
+            </form>
+                    
+            <div class="home">
+              <div class="row">
+                
+              </div>
+              <div class="row">
+                <div class="col-12 userDiv">
+                  <a href="/upload"><button class="btn btn-lg btn-dark userBtn" type="button">Upload a new poster</button></a>
+                  <a href="/board"><button class="btn btn-lg btn-dark userBtn" type="button"> Go to board</button></a>
+                </div>
+              </div>
+              
+            </div>
+            
+        </div>
+    
+        
+        </main>
+      </body>
+      
+               
+
+                
+<%- include("partials/footer.ejs") %>
