@@ -1,3 +1,4 @@
+// import dependencies
 require('dotenv').config()
 const express = require('express');
 const port = process.env.PORT || 3000;
@@ -16,58 +17,63 @@ const server = createServer(app);
 const io = require('socket.io')(server)
 const mongoose = require('mongoose');
 
+// initialise dependencies
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({ secret: 'my-secret-key' , resave: false, saveUninitialized: true }));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use('/public', express.static(path.join(__dirname, 'public')))
+//implement hashing for sensitive informations
 
 const secret = process.env.SECRET;
-const saltRounds = 10; 
 let correctPasswordHash;
-
-
-
-bcrypt.hash(secret, saltRounds, (err, hash) => {
-  if (err) {
-   
+bcrypt.hash(secret, 10, (err, hash) => {
+  if (err) { 
   } else {
      correctPasswordHash = hash;
-
   }
 });
 
 
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({ secret: 'my-secret-key' , resave: false, saveUninitialized: true }));
+class User {
+    constructor(id, userName, password, ){
+      
+
+    }
+
+}
+
+
+// Set up MongoDB database
+
+  // Local MongoDB
+mongoose.connect('mongodb://127.0.0.1:27017/posterDB');
 
 
 
-// Local MongoDB
-// mongoose.connect('mongodb://127.0.0.1:27017/posterDB');
+  // Remote MongoDB
+// const uri = process.env.MONGODB_URI;
 
+// mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => console.log('MongoDB Connected...'))
+//   .catch(err => console.log(err));
 
-
-// // // Remote MongoDB
-const uri = process.env.MONGODB_URI;
-
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB Connected...'))
-  .catch(err => console.log(err));
-
-
+// Create a database Schema
 const posterSchema = {
     name: String,
     date: Date
 };
 
-const Poster =mongoose.model("Poster", posterSchema)
-
-
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-app.use('/public', express.static(path.join(__dirname, 'public')))
+const Poster = mongoose.model("Poster", posterSchema)
 
 
 
 
 
+
+
+//Handle the uploading of poster
 
 function posterUpload() {
 
@@ -144,6 +150,11 @@ app.get("/login", (req,res)=>{
     res.render("login")
 })
 
+
+app.get("/user", (req,res)=>{
+
+  res.render("user")
+})
 
 
 
