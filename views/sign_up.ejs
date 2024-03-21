@@ -1,0 +1,52 @@
+<%- include("partials/header.ejs") %>
+<body class="d-flex align-items-center py-4">
+
+  <main class="form-signin w-100 m-auto">
+    <form action="/sign_up" method="post">
+      <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" name="email" required>
+        <label for="floatingInput">Email address</label>
+      </div>
+  
+      <div class="form-floating">
+        <input type="password" class="form-control password" id="floatingPassword  " placeholder="Password" name="password" onchange="onChange()" required>
+        <label for="floatingPassword">Password</label>
+        
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control password-confirm" id="floatingPassword  " placeholder="Password" name="password-confirm" onchange="onChange()" required>
+        <label for="floatingPassword">Confirm password</label>
+        
+      </div>
+      <button class="btn btn-primary w-100 py-2" type="submit">Sign up</button>
+  
+  
+      
+    </form>
+  </main>
+</div>
+
+
+
+  <footer class="footer mt-auto bg-dark bg-opacity-75">
+    <div class="container">
+       <span class="text-white text-light">© <%=  new Date().getFullYear() %> Designed by CIMS student KOSSI SESSOU </span>
+    </div>
+</footer>
+    
+<script> 
+    function onChange() {
+    const password = document.querySelector('input[name=password]');
+    const confirm = document.querySelector('input[name=password-confirm]');
+    if (confirm.value === password.value) {
+      confirm.setCustomValidity('');
+    } else {
+      confirm.setCustomValidity('Passwords do not match');
+    }
+  }</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+
+</html>

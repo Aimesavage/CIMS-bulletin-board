@@ -2,14 +2,20 @@
 <body class="d-flex align-items-center py-4">
 
   <main class="form-signin w-100 m-auto">
-    <form action="/login" method="post">
-      <h1 class="h3 mb-3 fw-normal">Password required</h1>
-  
+    <form action="/login" method="post" novalidate>
+      <h1 class="h3 mb-3 fw-normal">Please login</h1>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
-        <label for="floatingPassword">Password</label>
-        <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+        <input type="email" class="form-control" id="floatingInput"  name="email">
+        <label for="floatingInput">Email address</label>
       </div>
+  
+      
+      <div class="form-floating">
+        <input type="password" class="form-control password-confirm" id="floatingPassword" placeholder="Password" name="password">
+        <label for="floatingPassword">Password</label>
+        
+      </div>
+      <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
   
   
       

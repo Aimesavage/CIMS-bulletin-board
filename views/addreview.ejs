@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+<body>
+        <div class="review_form">
+
+            <form action="/addreview" method="post">
+                
+                  <div class="container review_container">
+                    <label for="exampleFormControlTextarea1" class="form-label">Please give us feedback</label>
+                    <textarea class="form-control" id="" rows="3" name="review_body" required></textarea>
+                   <div style="margin: 10px;"> 
+                    <button type="submit" class="btn-lg btn-primary btn">submit</button>
+                </div>
+                  </div>
+                </div>
+
+            </form>
+           
+        
+    
+    
+
+</body>
+
+
+<%- include("partials/footer.ejs") %>

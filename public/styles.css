@@ -67,7 +67,7 @@ body{
 
 
 
-.card{
+.admin_card{
   box-shadow: 1px 1px 1px 1px #575757;
 }
 
@@ -75,7 +75,13 @@ body{
 margin: 10px 0;
 padding: 0 5px;
 }
-
+.collapse{
+  margin-top: 5px;
+  
+}
+.card-body{
+  background-color: #ffffff00;
+}
 .content{
   padding-top: 15%;
    display: flex;   
@@ -105,13 +111,20 @@ footer {
 
 .form-signin input[type="email"] {
   margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  border-radius: 0%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
-.form-signin input[type="password"] {
+.password {
+  margin-bottom: -1px;
+  border-radius: 0%;
+}
+.password-confirm{
   margin-bottom: 10px;
-  border-radius: 10px;
+  border-radius: 0%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius:10px ;
 }
 
 h1{
@@ -119,11 +132,6 @@ h1{
     justify-content: center;
 }
 
-/* .home{
-  padding: 20px;
-width: 70%;
-
-} */
 
 .logout{
   position: absolute;
@@ -148,4 +156,38 @@ width: 70%;
     max-height: 100px;
     max-width: 100%;
     object-fit: cover;
+}
+
+
+.userDiv{
+  display: flex;
+  margin: 40px 0px;
+ 
+  justify-content: space-around;
+}
+
+.reviewlink{
+margin-top: 20px;
+display: flex;
+justify-content: space-around;
+
+}
+.link-offset-2{
+
+  
+  font-size: 25px;
+}
+
+.review_form{
+
+padding: 100px;
+height: 100vh;
+ 
+
+}
+.review_container{
+display: flex;
+flex-wrap: wrap;
+  
+  width: 40%;
 }
