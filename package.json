@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "mocha --recursive --exit"
+    "test": "mocha --recursive --exit",
+    "build": "node app.js"
   },
   "author": "",
   "license": "ISC",
