@@ -54,7 +54,7 @@ bcrypt.hash(secret, 10, (err, hash) => {
 
 const mongoDBUri = 'mongodb://127.0.0.1:27017/bulletinBoardDB';
 
-mongoose.connect(mongoDBUri, { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect(mongoDBUri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 
