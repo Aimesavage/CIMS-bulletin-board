@@ -1,5 +1,5 @@
 # Bulletin Board Application
-![image](https://github.com/user-attachments/assets/7e589216-e934-43f3-a1e5-5de77048dfa8)
+
 
 This is a simple bulletin board web application where users can sign up, log in, upload posters, and leave reviews. Admins can manage user content and delete posters. Additionally, the system features automatic poster expiration and deletion based on set dates using cron jobs.
 
