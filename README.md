@@ -67,7 +67,7 @@ npm start
 •	Posters are automatically deleted when they expire, thanks to cron jobs.
 
 ## File Structure
-
+```
 ├── public/
 │   ├── images/      # Stores uploaded poster images
 ├── views/           # EJS templates
@@ -75,6 +75,7 @@ npm start
 ├── .env             # Environment variables
 ├── server.js        # Main server file
 └── README.md
+```
 License
 This project is licensed under the MIT License.
 
