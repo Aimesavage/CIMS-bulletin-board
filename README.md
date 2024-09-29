@@ -2,6 +2,14 @@
 
 
 This is a simple bulletin board web application where users can sign up, log in, upload posters, and leave reviews. Admins can manage user content and delete posters. Additionally, the system features automatic poster expiration and deletion based on set dates using cron jobs.
+## Video Walkthrough
+
+Here's a walkthrough of implemented features:
+
+<img src='poster.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+GIF created with Licecap.  
 
 ## Features
 
